@@ -39,3 +39,18 @@ if __name__ == '__main__':
     print("Welcome to the Game")
     gameValues=[0, 1, 2, 3, 4, 5, 6, 7, 8]
     chance = 1
+
+    while (True):
+        try:
+            if chance == 1:
+                printBoard(gameValues)
+                print("\nX's Chance")
+                value = int(input("\nPlease enter a value: "))
+
+            if gameValues[value] != 'O':
+                gameValues[value] = 'X'
+            else:
+                os.system('CLS')
+                print("\nPlease Enter Different Location for X")
+                continue
+            os.system('CLS')
