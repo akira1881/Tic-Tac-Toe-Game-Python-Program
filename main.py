@@ -69,7 +69,15 @@ if __name__ == '__main__':
                 os.system('CLS')
 
         except IndexError:
-            # exception if Value is not between 0 to 8
             os.system('CLS')
             print("\nOops!! Please Enter value from 0 - 8\n")
             continue
+
+        chance = 1 - chance
+        cwin = checkWin(gameValues)
+        if cwin == -2:
+            print("Game Draw")
+            break
+        if cwin != -1:
+            print("Match over")
+            break
