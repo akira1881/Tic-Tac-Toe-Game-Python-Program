@@ -22,3 +22,12 @@ def checkWin(gameValues):
             printBoard(gameValues)
             print("X Won the match")
             return 1
+
+        if gameValues[win[0]] == gameValues[win[1]] == gameValues[win[2]] == 'O':
+            printBoard(gameValues)
+            print("O Won the match")
+            return 0
+
+        if all(isinstance(item, str) for item in gameValues):
+            printBoard(gameValues)
+            return -2
