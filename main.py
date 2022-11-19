@@ -11,3 +11,14 @@ def printBoard(gameValues):
     print(f" {gameValues[3]} | {gameValues[4]} | {gameValues[5]} ")
     print(f"---|---|---")
     print(f" {gameValues[6]} | {gameValues[7]} | {gameValues[8]} ")
+
+
+def checkWin(gameValues):
+    # All Winning Patterns
+    wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+
+    for win in wins:
+        if gameValues[win[0]] == gameValues[win[1]] == gameValues[win[2]] == 'X':
+            printBoard(gameValues)
+            print("X Won the match")
+            return 1
