@@ -47,10 +47,29 @@ if __name__ == '__main__':
                 print("\nX's Chance")
                 value = int(input("\nPlease enter a value: "))
 
-            if gameValues[value] != 'O':
-                gameValues[value] = 'X'
-            else:
+                if gameValues[value] != 'O':
+                    gameValues[value] = 'X'
+                else:
+                    os.system('CLS')
+                    print("\nPlease Enter Different Location for X")
+                    continue
                 os.system('CLS')
-                print("\nPlease Enter Different Location for X")
-                continue
+
+            if chance == 0:
+                printBoard(gameValues)
+                print("\nZ's Chance")
+                value = int(input("\nPlease enter a value: "))
+
+                if gameValues[value] != 'X':
+                    gameValues[value] = 'O'
+                else:
+                    os.system('CLS')
+                    print("\nPlease Enter Different Location for O")
+                    continue
+                os.system('CLS')
+
+        except IndexError:
+            # exception if Value is not between 0 to 8
             os.system('CLS')
+            print("\nOops!! Please Enter value from 0 - 8\n")
+            continue
